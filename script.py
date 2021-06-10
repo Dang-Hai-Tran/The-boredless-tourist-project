@@ -52,4 +52,23 @@ def find_attractions(destination, interests):
                 attractions_with_interest.append(possible_attraction[0])
     return attractions_with_interest
 
-print(find_attractions("Los Angeles, USA", ["art"]))
+# print(find_attractions("Los Angeles, USA", ["art"]))
+def get_attractions_for_traveler(traveler):
+    traveler_destination = traveler[1]
+    traveler_interests = traveler[2]
+    traveler_attractions = find_attractions(traveler_destination, traveler_interests)
+    interest_string = "Hi "+ traveler[0] + " we think you 'll like these places around "+ traveler_destination +": "
+    for i in range(len(traveler_attractions)):
+        if traveler_attractions[-1] == traveler_attractions[i]:
+            interest_string += "the" + traveler_attractions[i] + "."
+        else:
+            interest_string += "the" + traveler_attractions[i] + ","
+    print(interest_string)
+
+# get_attractions_for_traveler(test_traveler)
+        
+    
+
+
+
+
